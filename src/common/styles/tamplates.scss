@@ -1,0 +1,15 @@
+@import './global-varriables.scss';
+
+%title {
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+
+  font: {
+    size: $font-size * 1.5;
+    weight: bold;
+    style: italic;
+  }
+
+}
