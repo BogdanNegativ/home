@@ -15,6 +15,9 @@ class Counter extends Component {
         this.intervalId = null;
     }
 
+    componentDidMount() {
+        this.ToggleAutoClick();
+    }
 
     ToggleAutoClick = () => {
         if (this.state.autoClick) {

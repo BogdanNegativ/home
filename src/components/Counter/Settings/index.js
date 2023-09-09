@@ -10,7 +10,6 @@ const Settings = ({
     onChangeAutoClickInterval,
 }) => (
     <div>
-        <h2>Налаштування</h2>
         <div>
             <label>
                 Крок лічильника:
