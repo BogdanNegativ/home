@@ -15,6 +15,7 @@ class Counter extends Component {
         this.intervalId = null;
     }
 
+
     handleToggleAutoClick = () => {
         if (this.state.autoClick) {
             clearInterval(this.intervalId);
@@ -48,6 +49,13 @@ class Counter extends Component {
         return (
             <div>
                 <h1>ЛІЧИЛЬНИК</h1>
+                <Display
+                    count={this.state.count}
+                    onToggleAutoClick={this.handleToggleAutoClick}
+                    autoClick={this.state.autoClick}
+                    onManualStep={this.handleAutoClick}
+                    mode={this.state.mode}
+                />
                 <Settings
                     step={this.state.step}
                     mode={this.state.mode}
@@ -57,11 +65,7 @@ class Counter extends Component {
                     onChangeStep={this.handleChangeStep}
                     onChangeAutoClickInterval={this.handleChangeAutoClickInterval}
                 />
-                <Display
-                    count={this.state.count}
-                    onToggleAutoClick={this.handleToggleAutoClick}
-                    autoClick={this.state.autoClick}
-                />
+
 
             </div>
         );
