@@ -16,31 +16,31 @@ class Counter extends Component {
     }
 
 
-    handleToggleAutoClick = () => {
+    ToggleAutoClick = () => {
         if (this.state.autoClick) {
             clearInterval(this.intervalId);
         } else {
-            this.intervalId = setInterval(this.handleAutoClick, this.state.autoClickInterval);
+            this.intervalId = setInterval(this.Click, this.state.autoClickInterval);
         }
         this.setState({ autoClick: !this.state.autoClick });
     };
 
-    handleAutoClick = () => {
+    Click = () => {
         const { count, step, mode } = this.state;
         const newValue = mode === 'add' ? count + step : count - step;
         this.setState({ count: newValue });
     };
 
-    handleToggleMode = () => {
+    ToggleMode = () => {
         const newMode = this.state.mode === 'add' ? 'subtract' : 'add';
         this.setState({ mode: newMode });
     };
 
-    handleChangeStep = (event) => {
+    ChangeStep = (event) => {
         this.setState({ step: parseInt(event.target.value) });
     };
 
-    handleChangeAutoClickInterval = (event) => {
+    ChangeAutoClickInterval = (event) => {
         this.setState({ autoClickInterval: parseInt(event.target.value) });
     };
 
@@ -51,9 +51,9 @@ class Counter extends Component {
                 <h1>ЛІЧИЛЬНИК</h1>
                 <Display
                     count={this.state.count}
-                    onToggleAutoClick={this.handleToggleAutoClick}
+                    onToggleAutoClick={this.ToggleAutoClick}
                     autoClick={this.state.autoClick}
-                    onManualStep={this.handleAutoClick}
+                    onManualStep={this.Click}
                     mode={this.state.mode}
                 />
                 <Settings
@@ -61,9 +61,9 @@ class Counter extends Component {
                     mode={this.state.mode}
                     autoClick={this.state.autoClick}
                     autoClickInterval={this.state.autoClickInterval}
-                    onToggleMode={this.handleToggleMode}
-                    onChangeStep={this.handleChangeStep}
-                    onChangeAutoClickInterval={this.handleChangeAutoClickInterval}
+                    onToggleMode={this.ToggleMode}
+                    onChangeStep={this.ChangeStep}
+                    onChangeAutoClickInterval={this.ChangeAutoClickInterval}
                 />
 
 

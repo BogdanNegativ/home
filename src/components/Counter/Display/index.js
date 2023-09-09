@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const Display = ({ count, onToggleAutoClick, autoClick, onManualStep, mode }) => (
     <div>
         <h2>Відображення</h2>
