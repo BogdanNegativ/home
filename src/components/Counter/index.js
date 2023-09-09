@@ -10,7 +10,7 @@ class Counter extends Component {
             step: 1,
             mode: 'add',
             autoClick: false,
-            autoClickInterval: 1000, // Default interval in milliseconds
+            autoClickInterval: 1000,
         };
         this.intervalId = null;
     }
